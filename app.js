@@ -12,7 +12,17 @@ const getPostData = (req) => {
       resolve({})
       return
     }
-
+    let postData = ''
+    req.on('data', chunk => {
+      postData += chunk.toString()
+    })
+    req.on('end', () => {
+      if (!postData) {
+        resolve({})
+        return
+      }
+      resolve(JSON.parse(postData))
+    })
   })
   return promise
 }
