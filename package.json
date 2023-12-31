@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.10.4"
+    "@types/node": "^20.10.4",
+    "mysql": "^2.18.1"
   },
   "dependencies": {
     "cross-env": "^7.0.3",
